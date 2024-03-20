@@ -111,7 +111,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
             render={({ field }) => (
               <FormItem className="w-full">
                 <FormControl>
-                  <Input placeholder="Event title" {...field} className="input-field" />
+                  <Input placeholder="Project title" {...field} className="input-field" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -177,7 +177,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
                         height={24}
                       />
 
-                      <Input placeholder="Event location or Online" {...field} className="input-field" />
+                      <Input placeholder="Project location or Online" {...field} className="input-field" />
                     </div>
 
                   </FormControl>
@@ -274,7 +274,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
                           <FormItem>
                             <FormControl>
                               <div className="flex items-center">
-                                <label htmlFor="isFree" className="whitespace-nowrap pr-3 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Free Ticket</label>
+                                <label htmlFor="isFree" className="whitespace-nowrap pr-3 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">No Budget</label>
                                 <Checkbox
                                   onCheckedChange={field.onChange}
                                   checked={field.value}
@@ -326,7 +326,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
         >
           {form.formState.isSubmitting ? (
             'Submitting...'
-          ): `${type} Event `}</Button>
+          ): `${type} Project `}</Button>
       </form>
     </Form>
   )
