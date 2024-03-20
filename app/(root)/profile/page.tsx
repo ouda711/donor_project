@@ -23,7 +23,7 @@ const ProfilePage = async ({ searchParams }: SearchParamProps) => {
   return (
     <>
       {/* My Tickets */}
-      <section className="bg-primary-50 bg-dotted-pattern bg-cover bg-center py-5 md:py-10">
+      {/* <section className="bg-primary-50 bg-dotted-pattern bg-cover bg-center py-5 md:py-10">
         <div className="wrapper flex items-center justify-center sm:justify-between">
           <h3 className='h3-bold text-center sm:text-left'>My Tickets</h3>
           <Button asChild size="lg" className="button hidden sm:flex">
@@ -32,12 +32,12 @@ const ProfilePage = async ({ searchParams }: SearchParamProps) => {
             </Link>
           </Button>
         </div>
-      </section>
+      </section> */}
 
-      <section className="wrapper my-8">
+      {/* <section className="wrapper my-8">
         <Collection 
           data={orderedEvents}
-          emptyTitle="No event tickets purchased yet"
+          emptyTitle=""
           emptyStateSubtext="No worries - plenty of exciting events to explore!"
           collectionType="My_Tickets"
           limit={3}
@@ -45,15 +45,15 @@ const ProfilePage = async ({ searchParams }: SearchParamProps) => {
           urlParamName="ordersPage"
           totalPages={orders?.totalPages}
         />
-      </section>
+      </section> */}
 
       {/* Events Organized */}
       <section className="bg-primary-50 bg-dotted-pattern bg-cover bg-center py-5 md:py-10">
         <div className="wrapper flex items-center justify-center sm:justify-between">
-          <h3 className='h3-bold text-center sm:text-left'>Events Organized</h3>
+          <h3 className='h3-bold text-center sm:text-left'>Projects Created</h3>
           <Button asChild size="lg" className="button hidden sm:flex">
             <Link href="/events/create">
-              Create New Event
+              Create New Project
             </Link>
           </Button>
         </div>
@@ -62,7 +62,7 @@ const ProfilePage = async ({ searchParams }: SearchParamProps) => {
       <section className="wrapper my-8">
         <Collection 
           data={organizedEvents?.data}
-          emptyTitle="No events have been created yet"
+          emptyTitle="No projects have been created yet"
           emptyStateSubtext="Go create some now"
           collectionType="Events_Organized"
           limit={3}
