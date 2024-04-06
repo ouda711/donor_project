@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="854574bb-bc06-4c41-9713-427fec62bbdb" name="Changes" comment="" />
+    <list default="true" id="854574bb-bc06-4c41-9713-427fec62bbdb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,7 +30,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "master",
     "last_opened_file_path": "/home/ouda/WebstormProjects/donor_project",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -47,7 +49,8 @@
       <option name="presentableId" value="Default" />
       <updated>1710941015579</updated>
       <workItem from="1710941016914" duration="723000" />
-      <workItem from="1710942415733" duration="641000" />
+      <workItem from="1710942415733" duration="1243000" />
+      <workItem from="1711571896766" duration="31000" />
     </task>
     <servers />
   </component>

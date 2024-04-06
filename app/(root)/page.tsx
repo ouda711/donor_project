@@ -7,6 +7,16 @@ import { SearchParamProps } from '@/types';
 import Image from 'next/image'
 import Link from 'next/link'
 
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+
+import { Card, CardContent } from "@/components/ui/card"
+
 export default async function Home({ searchParams }: SearchParamProps) {
   const page = Number(searchParams?.page) || 1;
   const searchText = (searchParams?.query as string) || '';
@@ -18,6 +28,33 @@ export default async function Home({ searchParams }: SearchParamProps) {
     page,
     limit: 6
   })
+
+  const donors = [
+    {
+      name: 'USAID',
+      image: '/assets/donor-logos/usaid.svg'
+    },
+    {
+      name: 'UNICEF',
+      image: '/assets/donor-logos/unicef.svg'
+    },
+    {
+      name: 'GIZ',
+      image: '/assets/donor-logos/giz.gif'
+    },
+    {
+      name: 'ESTDEV',
+      image: '/assets/donor-logos/EstDev.png'
+    },
+    {
+      name: 'UNDP',
+      image: '/assets/donor-logos/undp.png'
+    },
+    {
+      name: 'EU Commission',
+      image: '/assets/donor-logos/eu.png'
+    },
+  ]
 
   return (
     <>
@@ -42,6 +79,38 @@ export default async function Home({ searchParams }: SearchParamProps) {
           />
         </div>
       </section> 
+
+      <section id='donors' className='wrapper my-8 md:gap-12 w-full'>
+        <h2 className='h2-bold'>Donors</h2>
+
+        <Carousel 
+          opts={{
+            align: "start",
+          }}
+          className="w-full"
+        >
+          <CarouselContent>
+            {donors.map((item, index) => (
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/6">
+                <div className="p-1">
+                  <Card>
+                    <CardContent className="flex aspect-square items-center justify-center p-6">
+                    <Image
+                      src={item.image}
+                      width={500}
+                      height={500}
+                      alt="Picture of the author"
+                    />
+                    </CardContent>
+                  </Card>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      </section>
 
       <section id="events" className="wrapper my-8 flex flex-col gap-8 md:gap-12">
         <h2 className="h2-bold">Featured Projects</h2>
