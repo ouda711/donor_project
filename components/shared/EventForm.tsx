@@ -21,6 +21,8 @@ import { Checkbox } from "../ui/checkbox"
 import { useRouter } from "next/navigation"
 import { createEvent, updateEvent } from "@/lib/actions/event.actions"
 import { IEvent } from "@/lib/database/models/event.model"
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 
 type EventFormProps = {
@@ -68,8 +70,15 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
           userId,
           path: '/profile'
         })
+        const notify = () => toast("Project created successfully!", {
+          position: 'top-right',
+          autoClose: 5000,
+          pauseOnHover: true,
+          type: 'success'
+        });
 
         if(newEvent) {
+          notify;
           form.reset();
           router.push(`/events/${newEvent._id}`)
         }
@@ -103,6 +112,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
 
   return (
     <Form {...form}>
+      <ToastContainer />
       <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-5">
         <div className="flex flex-col gap-5 md:flex-row">
           <FormField
